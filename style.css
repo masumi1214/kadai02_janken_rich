@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff; /* 背景を白に変更 */height: 100vh;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.pet-selection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pet-option {
+  border: 2px solid transparent;
+  margin: 010px;
+  padding: 10px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.pet-option.selected {
+  border: 2px solid red;
+  box-shadow: 0010px red;
+}
+
+.pet-option img {
+  width: 100px;
+}
+
+#start-game:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.level {
+  font-size: 1.5em;
+  padding-left: 20px;
+}
+
+.resources {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.resources div {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.resources img {
+  width: 24px;
+  margin-right: 5px;
+}
+
+.main-area {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* 背景を白に変更 */
+  position: relative;
+}
+
+.room {
+  position: relative;
+  width: 500px; /* 横長に変更 */
+  height: 300px; /* 高さを調整 */
+  background-color: #ffe4e1;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  background-image: url('imeges/background.png'); /* 背景画像を追加 */
+  background-size: contain; /* 背景を要素全体に合わせる */
+  background-position: center; /* 背景を中央に配置 */
+}
+
+.shelf {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.shelf img {
+  width: 60px; /* アイコンサイズを60pxに設定 */
+  height: 50px; /* アイコンサイズを50pxに設定 */
+  cursor: pointer;
+}
+
+.pet-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pet-area img {
+  width: 300px;
+  height: auto; /* ペット画像はアスペクト比を維持 */
+}
+
+#message-box {
+  position: absolute;
+  bottom: 10px;
+  width: 80%;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.control-panel {
+  width: 500px;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.control-panel button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.control-panel img {
+  width: 50px; /* アイコンサイズを15pxに設定 */
+  height: 50px; /* アイコンサイズを15pxに設定 */
+}
+
+.status-panel {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  display: flex; /* 横並びにする */justify-content: space-around; /* 要素の間にスペースを配置 */text-align: center;
+}
+
+.status-panel p {
+  margin: 010px; /* 要素間のスペースを確保 */font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid black;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0010pxrgba(0, 0, 0, 0.5);
+}
+
+.modal-content img {
+  width: 150px;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ペットにアニメーションをつける */
+@keyframes pet-bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+.pet-area img {
+  animation: pet-bounce 1s infinite;
+}

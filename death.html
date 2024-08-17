@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ペットが死んでしまいました</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="death-screen" class="screen">
+        <h1>ペットが死んでしまいました</h1>
+        <img src="imeges/death_image.png" alt="ペットの死亡イラスト" class="death-image">
+        <button id="restart-game">再スタート</button>
+    </div>
+
+    <script>
+        document.getElementById('restart-game').addEventListener('click', () => {
+            window.location.href = 'welcome.html'; // 再スタートでウェルカム画面に戻る
+        });
+    </script>
+</body>
+</html>

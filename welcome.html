@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>育成ゲームへようこそ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome-screen" class="screen">
+        <h1>育成ゲームへようこそ！</h1>
+        <p>ペットを選んでください：</p>
+        <div class="pet-selection">
+            <div class="pet-option" data-pet="pet1">
+                <img src="imeges/pet1.png" alt="ペット1">
+            </div>
+            <div class="pet-option" data-pet="pet2">
+                <img src="imeges/pet2.png" alt="ペット2">
+            </div>
+            <div class="pet-option" data-pet="pet3">
+                <img src="imeges/pet3.png" alt="ペット3">
+            </div>
+        </div>
+        <button id="start-game" disabled>ゲームスタート</button>
+    </div>
+
+    <script>
+        let selectedPet = '';
+
+        document.querySelectorAll('.pet-option').forEach(option => {
+            option.addEventListener('click', () => {
+                // すべてのペットオプションから選択状態をクリア
+                document.querySelectorAll('.pet-option').forEach(pet => {
+                    pet.classList.remove('selected');
+                });
+
+                // クリックしたペットを選択状態にする
+                option.classList.add('selected');
+                selectedPet = option.getAttribute('data-pet');
+
+                // ゲームスタートボタンを有効にする
+                document.getElementById('start-game').disabled = false;
+            });
+        });
+
+        document.getElementById('start-game').addEventListener('click', () => {
+            if (selectedPet) {
+                // 選択したペットの情報をゲーム画面に渡す
+                localStorage.setItem('selectedPet', selectedPet);
+                window.location.href = 'game.html';
+            }
+        });
+    </script>
+</body>
+</html>

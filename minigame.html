@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミニゲーム - 通貨獲得</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mini-game-screen" class="screen">
+        <h1>ミニゲーム: 通貨を集めよう！</h1>
+        <p>クリックしてコインを集めましょう！</p>
+        <button id="collect-coins">コインを集める</button>
+        <p>獲得したコイン: <span id="coins-earned">0</span></p>
+        <button id="return-game">ゲームに戻る</button>
+    </div>
+
+    <script>
+        let coinsEarned = 0;
+
+        document.getElementById('collect-coins').addEventListener('click', () => {
+            coinsEarned += 10; // 1クリックで10コイン獲得
+            document.getElementById('coins-earned').textContent = coinsEarned;
+        });
+
+        document.getElementById('return-game').addEventListener('click', () => {
+            let currentCoins = parseInt(localStorage.getItem('currency'), 10) || 0;
+            localStorage.setItem('currency', currentCoins + coinsEarned); // 獲得したコインを追加
+            window.location.href = 'game.html'; // ゲームに戻る
+        });
+    </script>
+</body>
+</html>

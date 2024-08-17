@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショップ - 通貨購入</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="shop-screen" class="screen">
+        <h1>ショップ</h1>
+        <p>以下の通貨パックを購入できます：</p>
+        <button id="buy-small-pack">100コイン - ¥120</button>
+        <button id="buy-medium-pack">500コイン - ¥480</button>
+        <button id="buy-large-pack">1000コイン - ¥800</button>
+        <button id="return-game">ゲームに戻る</button>
+    </div>
+
+    <script>
+        function buyCoins(amount) {
+            let currentCoins = parseInt(localStorage.getItem('currency'), 10) || 0;
+            localStorage.setItem('currency', currentCoins + amount);
+            alert(amount + 'コインを購入しました！');
+        }
+
+        document.getElementById('buy-small-pack').addEventListener('click', () => {
+            buyCoins(100); // 小パックを購入
+        });
+
+        document.getElementById('buy-medium-pack').addEventListener('click', () => {
+            buyCoins(500); // 中パックを購入
+        });
+
+        document.getElementById('buy-large-pack').addEventListener('click', () => {
+            buyCoins(1000); // 大パックを購入
+        });
+
+        document.getElementById('return-game').addEventListener('click', () => {
+            window.location.href = 'game.html'; // ゲームに戻る
+        });
+    </script>
+</body>
+</html>

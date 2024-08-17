@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>育成ゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="level">
+            <span>レベル: 3</span>
+        </div>
+        <div class="resources">
+            <div class="diamonds">
+                <img src="imeges/diamond.png" alt="ダイヤモンド">
+                <span>24</span>
+            </div>
+            <div class="coins">
+                <img src="imeges/coin.png" alt="コイン">
+                <span id="currency-display">1,477</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-area">
+        <div class="room">
+            <div class="shelf">
+                <img id="camera" src="imeges/camera.png" alt="カメラ">
+                <img id="cactus" src="imeges/cactus.png" alt="サボテン">
+                <img id="books" src="imeges/books.png" alt="本">
+            </div>
+            <div class="pet-area">
+                <img id="pet" src="imeges/happy-pet.png" alt="ペット">
+            </div>
+            <div id="message-box" class="hidden">
+                <p id="message-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-panel">
+        <button id="play-button">
+            <img src="imeges/play.png" alt="遊ぶ">
+        </button>
+        <button id="feed-button">
+            <img src="imeges/feed.png" alt="餌をあげる">
+        </button>
+        <button id="bathroom-button">
+            <img src="imeges/bathroom.png" alt="トイレ">
+        </button>
+        <button id="sleep-button">
+            <img src="imeges/sleep.png" alt="眠る">
+        </button>
+        <button id="shop-button">
+            <img src="imeges/shop.png" alt="ショップ">
+        </button>
+        <button id="minigame-button">
+            <img src="imeges/minigame.png" alt="ミニゲーム">
+        </button>
+        <button id="purchase-button">
+            <img src="imeges/currency-icon.png" alt="通貨交換">
+        </button>
+    </div>
+
+    <div class="status-panel">
+        <p>満腹度: <span id="hunger">■■■■■□□□□□</span></p>
+        <p>楽しさ: <span id="fun">■■■■■□□□□□</span></p>
+        <p>健康度: <span id="health">■■■■■■■■□□</span></p>
+        <p>エネルギー: <span id="energy">■■■■■■□□□□</span></p>
+        <p>成長度: <span id="growth">■■■■■■■■■□</span></p>
+        <p>年齢: <span id="age">0</span></p>
+        <p>通貨: <span id="currency">100</span></p>
+    </div>
+
+    <!-- 進化時のモーダルウィンドウ -->
+    <div id="evolution-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="evolution-message">ペットが進化した！</h2>
+            <img id="evolution-image" src="" alt="進化したペット">
+            <button id="close-modal">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
